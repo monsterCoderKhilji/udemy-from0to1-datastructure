@@ -11,45 +11,62 @@ public class LinkedList<T extends Comparable<T>> implements Cloneable {
 	}
 
 	/**
-     * Append a new node to the end of the linked list.
-     */
+	 * Append a new node to the end of the linked list.
+	 */
 	public void addNode(T data) {
+		Node<T> curr = head;
+		Node<T> next = new Node<T>(data);
+		next.setNext(null);
 
+		if (null == head) {
+			head = next;
+		} else if (null == head.getNext()) {
+			head.setNext(next);
+		} else {
+			while (null != curr.getNext()) {
+				curr = curr.getNext();
+			}
+			curr.setNext(next);
+		}
 	}
 
 	/**
-     * Print all the nodes in the linked list.
-     */
+	 * Print all the nodes in the linked list.
+	 */
 	public void printNodes() {
+		Node<T> curr = head;
+		while (null != curr.getNext())
+			System.out.println(curr.toString() + " -> ");
+	}
+
+	/**
+	 * Count the number of nodes in the linked list.
+	 */
+	public int countNodes() {
+		Node<T> curr = head;
+		int count = 0;
+		
+	}
+
+	/**
+	 * Return the first element in the linked list.
+	 */
+	public T popElement() {
 
 	}
 
 	/**
-     * Count the number of nodes in the linked list.
-     */
-    public int countNodes() {
+	 * Delete all the elements in the linked list.
+	 */
+	public void deleteLinkedList() {
 
 	}
 
-    /**
-     * Return the first element in the linked list.
-     */
-    public T popElement() {
-
-	}
-
-    /**
-     * Delete all the elements in the linked list.
-     */
-    public void deleteLinkedList() {
-
-	}
-
-    /**
-     * Insert at the nth position in the list. Return if the number of nodes is
-     * less than n.
-     */
-    public void insertNth(int n, T data) {
+	/**
+	 * Insert at the nth position in the list. Return if the number of nodes is less
+	 * than n.
+	 */
+	public void insertNth(int n, T data) {
 
 	}
 
